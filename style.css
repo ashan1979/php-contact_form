@@ -57,11 +57,31 @@ form .message textarea {
     border: 1px solid #bfbfbf;
 }
 
-.wrapper .field i {
+form .field input::placeholder,
+form .message textarea::placeholder {
+    color: #bfbfbf;
+
+}
+
+.wrapper form i {
     position: absolute;
     left: 18px;
     top: 50%;
     font-size: 17px;
     pointer-events: none;
     transform: translateY(50%);
+}
+
+form .message {
+    position: relative;
+}
+
+form .message i {
+    top: 20px;
+    font-size: 20px;
+
+}
+
+form .message textarea {
+    min-height: 120px;
 }
