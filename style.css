@@ -101,13 +101,39 @@ form .message textarea {
 
 form .button-area {
     margin: 25px 0;
+    display: flex;
+    align-items: center;
 }
 
 .button-area button {
     font-size: 18px;
+    cursor: pointer;
     padding: 13px 25px;
     border: none;
     background: #0d6efd;
     color: #fff;
     border-radius: 5px;
+}
+
+.button-area span {
+    color: #0d6efd;
+    margin-left: 30px;
+}
+
+@media(max-width: 600px){
+    .wrapper header{
+        text-align: center;
+    }
+    form .dbl-field {
+        flex-direction: column;
+    }
+    .dbl-field .field {
+        width: 100%;
+    }
+    form .button-area {
+        flex-direction: column;
+    }
+    .button-area button {
+        width: 100%;
+    }
 }
