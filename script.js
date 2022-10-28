@@ -5,6 +5,7 @@ statusTxt = form.querySelector(".button-area span");
 
 form.onsubmit = (e)=> {
     e.preventDefault(); //preveinting form form submitting
+    statusTxt.style.color = "#0d6efd";
     statusTxt.style.display = "block";
 
     let xhr = new XMLHttpRequest(); //creating new xml Object.
@@ -14,6 +15,11 @@ form.onsubmit = (e)=> {
             let response = xhr.response;
             if(response.indexOf("Email and Password Field is Required!") != -1 || response.indexOf("Enter a Valid Email Address") || response.indexOf("Sorry, Failed to Send Your Message!")) {
                statusTxt.style.color = "red";
+            } else {
+                form.reset();
+                setTimeout(()=>{
+                    statusTxt.style.display = "none";
+                }, 3000);
             }
             statusTxt.innerText = response;
         }
