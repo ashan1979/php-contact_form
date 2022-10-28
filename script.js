@@ -13,6 +13,7 @@ form.onsubmit = (e)=> {
         if(xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.response;
             console.log(response);
+            statusTxt.innerText = response;
         }
     }
     let formData = new FormData()
