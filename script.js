@@ -8,4 +8,9 @@ form.onsubmit = (e)=> {
     statusTxt.style.display = "block";
 
     let xhr = new XMLHttpRequest(); //creating new xml Object.
+    xhr.open("POST", "message.php", true);
+    xhr.onload = ()=> {
+
+    }
+    xhr.send();
 }
