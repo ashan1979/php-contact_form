@@ -12,7 +12,9 @@ form.onsubmit = (e)=> {
     xhr.onload = ()=> {
         if(xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.response;
-            console.log(response);
+            if(response.indexOf("Email and Password Field is Required!") != -1 || response.indexOf("Enter a Valid Email Address") || response.indexOf("Sorry, Failed to Send Your Message!")) {
+               statusTxt.style.color = "red";
+            }
             statusTxt.innerText = response;
         }
     }

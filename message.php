@@ -10,6 +10,12 @@
             $receiver = "codingnepalweb@gmail.com";
             $subject = "From: $name <$email>";
             $body = "Name: $name\nEmail: $email\nPhone: $phone\nWebsite: $website\n\nMessage:  $massage\n\nRegards,\n$name";
+            $sender = "From: $email";
+            if(mail($receiver, $subject, $body, $sender)) {
+                echo "Your Message has Been Sent!";
+            } else {
+                echo "Sorry, Failed to Send Your Message!";
+            }
         } else {
             echo "Enter a Valid Email Address";
         }
